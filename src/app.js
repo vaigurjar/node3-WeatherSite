@@ -132,11 +132,19 @@ app.get('*', (req, res) => {
     })
 
 })
-app.listen(3000, () => {
 
-    console.log('Server is up')
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
 
-})
+app.listen(port, host, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env)
+  });
+  
+// app.listen(3000, () => {
+
+//     console.log('Server is up')
+
+// })
 
 // ----------------------------------------------------------------------------------------------
 // // vgapp.com
